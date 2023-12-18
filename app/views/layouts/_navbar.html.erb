@@ -1,12 +1,13 @@
 <!-- app/views/layouts/_navbar.html.erb -->
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg bg-body-tertiary">
+    <div class="container-fluid">
   <a class="navbar-brand" href="/">Co.Nexus</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-    <span class="navbar-toggler-icon"></span>
-  </button>
+  <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
   <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav ml-auto">
+    <ul class="navbar-nav">
       <li class="nav-item">
         <%= link_to 'Home', root_path, class: 'nav-link' %>
       </li>
@@ -15,8 +16,7 @@
       </li>
       <% if user_signed_in? %>
         <li class="nav-item">
-          <%# <%= link_to 'Logout', destroy_user_session_path, method: :delete, class: 'nav-link' %> 
-          <%= image_tag current_user.avatar_url , alt: "User Avatar" %>
+          <%= image_tag current_user.avatar_url, alt: "User Avatar", class: "d-inline-block align-text-top", style: "width: 30px; height: 30px; border-radius: 50%;" %>
         </li>
       <% else %>
         <li class="nav-item">
@@ -28,5 +28,6 @@
       <% end %>
       <!-- Add more navigation links as needed -->
     </ul>
+  </div>
   </div>
 </nav>
