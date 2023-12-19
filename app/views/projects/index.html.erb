@@ -1,7 +1,16 @@
 <div class="container mt-4">
   <h1>Projects</h1>
-
+  
   <%= link_to 'New Project', new_project_path, class: 'btn btn-primary mb-3' %>
+
+  <%= form_with(url: projects_path, method: :get) do |form| %>
+    <div class="mb-3">
+      <%= form.label :label, 'Filter by Label' %>
+      <%= form.select :label, Project.all_labels, { include_blank: 'All Labels' }, class: 'form-select' %>
+    </div>
+
+    <%= form.submit 'Filter', class: 'btn btn-primary' %>
+  <% end %>
 
   <table class="table">
     <thead>

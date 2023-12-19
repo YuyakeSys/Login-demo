@@ -10,9 +10,9 @@
   </div>
 
   <div class="form-floating">
-    <%= form.label :label, 'Select Label' %>
+    <%= form.label :labels, 'Select Label' %>
     <br/>
-    <%= form.select :label, ['Biology', 'Software', 'Sustainable'], { selected: project.labels }, { class: 'form-select', id: 'floatingSelect', required: true } %>
+    <%= form.select :labels, ['Biology', 'Software', 'Sustainable'], { selected: project.labels }, { class: 'form-select', id: 'floatingSelect', required: true } %>
   </div>
 
 
